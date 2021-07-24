@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom";
-import Parent from './components/Parent'
+import GuestForm from "./components/guestForm";
 
 const App = () => {
     return (
         <div>
-            <Parent/>
+            <GuestForm/>
         </div>
     );
 };
