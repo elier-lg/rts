@@ -1,0 +1,121 @@
+$primary-colors: (
+	yellow: (
+		base: #ffe600,
+		1: #fff9c4,
+		2: #fff59d,
+		3: #ffee58,
+		4: #ebd621
+	),
+	black: (
+		base: #000000,
+		1: #1a1a24
+	),
+	grey: (
+		base: #2e2e38,
+		1: #747480,
+		2: #c4c4cd,
+		3: #eaeaf2,
+		4: #f6f6fa,
+	),
+	white: (
+		base: #ffffff
+	)
+);
+
+$secondary-colors: (
+	green: (
+		base: #2db757,
+		1: #8ce8ad,
+		2: #57e188,
+		3: #34c768,
+		4: #189d3e,
+		5: #168736,
+		6: #13652a
+	),
+	teal: (
+		base: #27acaa,
+		1: #93f0e6,
+		2: #60e6e1,
+		3: #42c9c2,
+		4: #109090,
+		5: #0d7575,
+		6: #004f4f
+	),
+	blue: (
+		base: #188ce5,
+		1: #87d3f2,
+		2: #4ebeeb,
+		3: #35a4e8,
+		4: #1777cf,
+		5: #155cb4,
+		6: #082c65
+	),
+	purple: (
+		base: #3d108a,
+		1: #9c82d4,
+		2: #724bc3,
+		3: #542ea5,
+		4: #240d75,
+		5: #0a095a,
+		6: #15173e
+	),
+	maroon: (
+		base: #750e5c,
+		1: #c981b2,
+		2: #b14891,
+		3: #922b73,
+		4: #5a0a42,
+		5: #42152d,
+		6: #351c21
+	),
+	red: (
+		base: #ff4136,
+		1: #ff9a91,
+		2: #ff736a,
+		3: #f95d54,
+		4: #e0362c,
+		5: #b9251c,
+		6: #7a130d
+	),
+	orange: (
+		base: #ff6d00,
+		1: #ffb46a,
+		2: #ff9831,
+		3: #ff8a0a,
+		4: #f76900,
+		5: #eb4f00,
+		6: #bc2f00
+	)
+);
+
+$interaction-colors: (
+	red: (
+		danger: #d0021b
+	),
+	green: (
+		confirm: #2db757
+	),
+	yellow: (
+		warning: #ebd621
+	),
+	blue: (
+		link: #155cb4
+	),
+	grey: (
+		inactive: #eaeaea
+	)
+);
+
+$colors: map-merge($primary-colors, $secondary-colors);
+
+@function color($name, $variant: base, $type: "") {
+	$interaction-color-map: map-get($interaction-colors, $name);
+
+	@if type-of($interaction-color-map) == "map" {
+		@if map-has-key($interaction-color-map, $variant) {
+			@return map-get($interaction-color-map, $variant);
+		}
+	}
+
+	@return map-get(map-get($colors, $name), $variant);
+}

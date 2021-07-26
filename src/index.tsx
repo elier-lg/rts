@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import GuestForm from "./components/guestForm";
 
-const App = () => {
+const RTS = () => {
     return (
         <div>
             <GuestForm/>
@@ -9,4 +9,4 @@ const App = () => {
     );
 };
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<RTS />, document.querySelector('#root'));

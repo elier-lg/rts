@@ -1,0 +1,44 @@
+@import "colors.scss";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/NotoSans-Regular.woff");
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/NotoSans-Bold.woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/NotoSans-Italic.woff");
+	font-style: italic;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: "Noto Sans";
+	font-size: 14px;
+	color: color(black, 1);
+	background-color: color(grey, 4);
+	height: 100%;
+
+	& > :global(#root) {
+		height: 100%;
+	}
+
+	input {
+		font-family: "Noto Sans";
+	}
+}
