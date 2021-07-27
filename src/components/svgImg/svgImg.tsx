@@ -5,5 +5,5 @@ interface svgImgProps {
 }
 
 export const DevImg = ({ className }: svgImgProps) => {
-    return <img className={className} src={dev} />;
+    return <img className={className} src={dev} alt="img" />;
 };

@@ -1,11 +1,14 @@
 import ReactDOM from "react-dom";
-import GuestForm from "./components/guestForm";
+import Dashboard from "./views/dashboard";
+import { Provider } from 'react-redux'
+import { store } from './state'
+import "./assets/scss/base.scss";
 
 const RTS = () => {
     return (
-        <div>
-            <GuestForm/>
-        </div>
+        <Provider store={store}>
+            <Dashboard />
+        </Provider>
     );
 };
 
