@@ -1,18 +1,18 @@
 // Libraries
 import React from "react";
 // import PropTypes from "prop-types";
-// import FontAwesome from "react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
+import { DevImg } from "../svgImg/svgImg"
 
 // Assets
 import "../Header/styles.scss";
 import { Menu as MenuIcon } from "@material-ui/icons";
 import config from "../../config";
-
 import { headerProps } from '../../interfaces'
 
 class Header extends React.Component<headerProps> {
-
 	state = {
 		showMenu: false,
 		userName: ''
@@ -47,7 +47,7 @@ class Header extends React.Component<headerProps> {
 
 		return (
 			<header className={"header"}>
-				{/* <Logo className={ styles.logo } /> */}
+				<DevImg className={"logo"} />
 				<div className={"title"}>
 					<span>Title</span>
 					{/* <FormattedMessage id="app.title" /> */}
@@ -56,10 +56,10 @@ class Header extends React.Component<headerProps> {
 					!isPublic && (
 						<>
 							<div className={"user"}>
-								{/* <FontAwesome
+								<FontAwesomeIcon
 									className={"icon"}
-									name={"faUser"}
-								/> */}
+									icon={faUser}
+								/>
 								{userName ?? "Elier Lopez"}
 							</div>
 							<button
@@ -86,7 +86,7 @@ class Header extends React.Component<headerProps> {
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<span>Helpv</span>
+											<span>Help</span>
 											{/* <FormattedMessage id="app.help" /> */}
 										</a>
 										<a

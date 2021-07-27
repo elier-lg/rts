@@ -7,7 +7,7 @@ import { headerProps } from '../../interfaces'
 const GuestForm: React.FC = () => {
 
     const headerPropsIn = {
-        isPublic: true,
+        isPublic: false,
     } as headerProps;
 
     return <div>
