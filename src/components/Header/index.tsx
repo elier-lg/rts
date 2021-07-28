@@ -15,7 +15,7 @@ import { headerProps } from '../../interfaces'
 class Header extends React.Component<headerProps> {
 	state = {
 		showMenu: false,
-		userName: ''
+		userName: undefined
 	}
 
 	componentWillUnmount() {
@@ -32,10 +32,6 @@ class Header extends React.Component<headerProps> {
 
 
 	render() {
-		// const {
-		// 	features
-		// } = this.context;
-
 		const {
 			isPublic
 		} = this.props;
@@ -49,8 +45,7 @@ class Header extends React.Component<headerProps> {
 			<header className={"header"}>
 				<DevImg className={"logo"} />
 				<div className={"title"}>
-					<span>Title</span>
-					{/* <FormattedMessage id="app.title" /> */}
+					<span>RTS</span>
 				</div>
 				{
 					!isPublic && (
@@ -60,16 +55,11 @@ class Header extends React.Component<headerProps> {
 									className={"icon"}
 									icon={faUser}
 								/>
-								{userName ?? "Elier Lopez"}
+								{userName ?? "John Doe"}
 							</div>
 							<button
 								className={"btn"}
 								onClick={this.toggleMenu}
-							// ref={
-							// 	(el) => {
-							// 		this.btnMenu = el;
-							// 	}
-							// }
 							>
 								<MenuIcon />
 							</button>
@@ -87,7 +77,6 @@ class Header extends React.Component<headerProps> {
 											rel="noopener noreferrer"
 										>
 											<span>Help</span>
-											{/* <FormattedMessage id="app.help" /> */}
 										</a>
 										<a
 											className={"item"}
@@ -96,7 +85,6 @@ class Header extends React.Component<headerProps> {
 											rel="noopener noreferrer"
 										>
 											<span>Feedback</span>
-											{/* <FormattedMessage id="app.feedBack" /> */}
 										</a>
 										{
 											<Link
@@ -104,13 +92,11 @@ class Header extends React.Component<headerProps> {
 												to="/admin"
 											>
 												<span>admin</span>
-												{/* <FormattedMessage id="app.admin" /> */}
 											</Link>
 										}
 										<button
 											className={"item"} >
 											<span>Sign out</span>
-											{/* <FormattedMessage id="app.signOut" /> */}
 										</button>
 									</div>
 								)
@@ -123,5 +109,4 @@ class Header extends React.Component<headerProps> {
 	}
 }
 
-// export default injectIntl(Header);
 export default Header;
