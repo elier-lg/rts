@@ -1,16 +1,15 @@
 import ReactDOM from "react-dom";
-// import Dashboard from "./views/dashboard";
-import CreateUser from "./views/createUser";
+import RTS from "./views";
 import { Provider } from 'react-redux'
 import { store } from './state'
 import "./assets/scss/base.scss";
 
-const RTS = () => {
+const App = () => {
     return (
         <Provider store={store}>
-            <CreateUser />
+            <RTS />
         </Provider>
     );
 };
 
-ReactDOM.render(<RTS />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));

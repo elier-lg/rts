@@ -3,7 +3,7 @@ import { useActions } from '../../hooks';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Person } from '../../state/interfaces'
 
-const SearchUsers: React.FC = () => {
+const SearchPersons: React.FC = () => {
     const [term, setTerm] = useState('');
     const { searchUsers } = useActions();
     const { data, error, loading } = useTypedSelector(state => state.users)
@@ -29,4 +29,4 @@ const SearchUsers: React.FC = () => {
     </>
 }
 
-export default SearchUsers;
+export default SearchPersons;

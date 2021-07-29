@@ -45,7 +45,6 @@ export const addUser = (user: Person) => {
       keys.forEach(k => {
         userForm.append(k, userObj[k]);
       });
-      debugger;
       const { data } = await axios.post(
         `${config.usersApiBaseUrl}Persons`,
         userForm,

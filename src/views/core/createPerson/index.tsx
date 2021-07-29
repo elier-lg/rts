@@ -1,7 +1,7 @@
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 import { useState } from 'react';
-import { useActions } from '../../hooks';
-import { Person } from '../../state/interfaces';
+import { useActions } from '../../../hooks';
+import { Person } from '../../../state/interfaces';
 import './styles.scss';
 import { Checkbox } from '@material-ui/core';
 
@@ -17,7 +17,7 @@ const initialPersonState = {
   isNotificationEnabled: false,
 };
 
-const CreateUser: React.FC = () => {
+const CreatePerson: React.FC = () => {
   const [person, setUser] = useState<Person>(initialPersonState as Person);
   const { addUser } = useActions();
 
@@ -60,4 +60,4 @@ const CreateUser: React.FC = () => {
   );
 };
 
-export default CreateUser;
+export default CreatePerson;
