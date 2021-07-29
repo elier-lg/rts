@@ -1,8 +1,8 @@
-export interface User {
+export interface Person {
     id: number;
-    name: string;
+    firstName: string;
+    lastName: string;
+    isNotificationEnabled: boolean;
     fullName: string;
-    phone: string;
-    email: string;
   }
   

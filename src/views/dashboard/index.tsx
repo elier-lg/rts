@@ -1,12 +1,12 @@
 import Header from '../../components/Header';
-import UsersList from '../../components/usersList';
+import SearchUser from '../../components/searchUser';
 
 import './styles.scss'
 
 const Dashboard: React.FC = () => {
     return <div className={"holder"}>
         <Header isPublic={false} />
-        <UsersList />
+        <SearchUser />
     </div>
 }
 

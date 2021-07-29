@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useActions } from '../../hooks';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { User } from '../../state/interfaces'
+import { Person } from '../../state/interfaces'
 
-const UsersList: React.FC = () => {
+const SearchUsers: React.FC = () => {
     const [term, setTerm] = useState('');
     const { searchUsers } = useActions();
     const { data, error, loading } = useTypedSelector(state => state.users)
@@ -25,8 +25,8 @@ const UsersList: React.FC = () => {
         </form>
         {error && <h3>{error}</h3>}
         {loading && <h3>loading...</h3>}
-        {!error && !loading && data.map((u: User) => <div key={u.id}>  {u.fullName} </div>)}
+        {!error && !loading && data.map((u: Person) => <div key={u.id}>  {u.fullName} </div>)}
     </>
 }
 
-export default UsersList;
+export default SearchUsers;

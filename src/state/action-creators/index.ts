@@ -1,1 +1,1 @@
-export { searchUsers } from './usersActionCreators'
+export { searchUsers, addUser } from './usersActionCreators'
