@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Help extends React.Component {
+class LogIn extends React.Component {
   render() {
-    return <>Help view</>;
+    return <>LogIn</>;
   }
 }
 
-export default Help;
+export default LogIn;

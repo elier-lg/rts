@@ -2,19 +2,26 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import { DevImg } from '../svgImg/svgImg';
 
 // Assets
 import '../Header/styles.scss';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import config from '../../config';
-import { headerProps } from '../../interfaces';
+import { Person } from '../../state/interfaces';
+
+type headerProps = {
+  isPublic: boolean;
+  loggedPerson: Person;
+} & typeof Header.defaultProps;
 
 class Header extends React.Component<headerProps> {
+  static defaultProps = {
+    loggedPerson: { fullName: 'No User' } as Person,
+  };
+
   state = {
     showMenu: false,
-    userName: undefined,
   };
 
   componentWillUnmount() {
@@ -28,12 +35,13 @@ class Header extends React.Component<headerProps> {
   };
 
   renderMenu = () => {
-		const { showMenu, userName } = this.state;
+    const { showMenu } = this.state;
+    const { loggedPerson } = this.props;
     return (
       <>
         <div className={'user'}>
           <FontAwesomeIcon className={'icon'} icon={faUser} />
-          {userName ?? 'John Doe'}
+          {loggedPerson && loggedPerson.fullName}
         </div>
         <button className={'btn'} onClick={this.toggleMenu}>
           <MenuIcon />

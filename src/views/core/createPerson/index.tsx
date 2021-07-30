@@ -33,7 +33,7 @@ const CreatePerson: React.FC = () => {
 
   return (
     <div className={'holder'}>
-      <Header isPublic={false} />
+      <Header isPublic={false} loggedPerson = {{ fullName: 'Pepe el Toro' } as Person} />
       <form>
         <input
           placeholder="First Name"

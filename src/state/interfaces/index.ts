@@ -4,6 +4,7 @@ export interface Person {
     lastName: string;
     isNotificationEnabled: boolean;
     fullName: string;
+    phone: string;
   }
 
   export interface AddPerson {
