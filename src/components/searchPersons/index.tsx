@@ -9,7 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const SearchPersons: React.FC = () => {
   const [term, setTerm] = useState('');
@@ -27,7 +27,7 @@ const SearchPersons: React.FC = () => {
 
   const renderTable = () => {
     return (
-      <Table className={'personsTable'}>
+      <Table className={styles.personsTable}>
         <TableHead>
           <TableRow>
             <TableCell>Full Name</TableCell>
@@ -59,7 +59,7 @@ const SearchPersons: React.FC = () => {
   };
 
   return (
-    <div className={'holder'}>
+    <div className={styles.holder}>
       <form>
         <input value={term} onChange={hanldeOnchange} />
         <button type="submit" onClick={hanldeOnSubmit}>
@@ -68,7 +68,6 @@ const SearchPersons: React.FC = () => {
       </form>
       {error && <h3>{error}</h3>}
       {loading && <h3>loading...</h3>}
-      {/* {!error && !loading && data.map((u: Person) => <div key={u.id}> {u.fullName} </div>)} */}
       {!error && !loading && renderTable()}
     </div>
   );

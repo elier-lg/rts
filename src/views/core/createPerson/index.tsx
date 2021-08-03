@@ -2,7 +2,7 @@ import Header from '../../../components/Header';
 import { useState } from 'react';
 import { useActions } from '../../../hooks';
 import { Person } from '../../../state/interfaces';
-import './styles.scss';
+import styles from './styles.module.scss';
 import { Checkbox } from '@material-ui/core';
 
 const fields = {
@@ -32,7 +32,7 @@ const CreatePerson: React.FC = () => {
   };
 
   return (
-    <div className={'holder'}>
+    <div className={ styles.holder}>
       <Header isPublic={false} loggedPerson = {{ fullName: 'Pepe el Toro' } as Person} />
       <form>
         <input

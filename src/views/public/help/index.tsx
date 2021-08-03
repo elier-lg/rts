@@ -1,8 +1,14 @@
 import React from 'react';
+import Header from '../../../components/Header';
 
 class LogIn extends React.Component {
   render() {
-    return <>log in view</>;
+    return (
+      <>
+        <Header isPublic={true} />
+        help view
+      </>
+    );
   }
 }
 

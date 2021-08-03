@@ -1,0 +1,14 @@
+@import '../../assets/scss/colors.scss';
+
+.holder {
+  margin: 10px 11px 12px 13px;
+  .personsTable {
+    margin: 15px 0 0 0;
+    height: 80%;
+    width: 50%;
+
+    thead {
+      background: color(gray, 2) ;
+    }
+  }
+}
